@@ -22,3 +22,30 @@ inner join person.Person as c
 on sp.BusinessEntityID = c.BusinessEntityID
 where sp.BusinessEntityID like '2%'
 order by sp.BusinessEntityID, c.LastName;
+
+select * from EmployeeSales
+
+select e.businessEntityID, p.Title, p.FirstName, p.LastName
+from person.person p
+join 
+HumanResources.Employee e
+on
+p.BusinessEntityID = e.BusinessEntityID
+where title ='Mr.'
+
+select e.businessEntityID
+from humanResources.Employee e
+where e.BusinessEntityID in
+	(select BusinessEntityID from
+	person.Person where title='Mr.')
+
+
+select p.BusinessEntityID, p.FirstName +' '+ p.LastName SALESPERSON	
+from Person.Person p
+where exists
+	(select * 
+	 from Sales.SalesOrderHeader s
+	 where TotalDue>150000
+	 and p.BusinessEntityID=s.SalesPersonID )
+
+	 select * from Sales.SalesOrderHeader
