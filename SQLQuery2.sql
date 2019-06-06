@@ -42,3 +42,16 @@ EXEC ml 'B%', @numrows=@retrows OUTPUT
 select @retrows AS 'Rows'
 
 --Using CASE Logic
+
+select * from sales.SalesOrderHeader
+
+select salesordernumber, customerId, totaldue,
+	CASE
+		WHEN totaldue<2500 THEN 'LOW'
+		WHEN totaldue>2500 AND totaldue < 10000 THEN 'AVG'
+		WHEN totaldue>10000 THEN 'HIGH'
+	END as 'Custom Rating'
+from sales.SalesOrderHeader
+
+--inline column statements
+
