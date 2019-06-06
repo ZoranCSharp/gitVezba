@@ -73,5 +73,3 @@ FOR XML AUTO, ELEMENTS, XMLSCHEMA('TestSchema')
 
 select top 3 BusinessEntityID as[@id], FirstName , LastName from Person.Person
 FOR XML PATH  ('Employee'), ROOT ('Employees')
-
-
