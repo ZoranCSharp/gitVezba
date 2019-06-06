@@ -119,3 +119,10 @@ on
 p.BusinessEntityID=pp.BusinessEntityID
 
 select * from PhoneNbrs()
+
+--Dynamic SQL Examples
+select COUNT(*) from Person.Person  
+
+DECLARE @tbl varchar(50)
+set @tbl ='Person.Address'
+exec('SELECT COUNT(*) FROM ' + @tbl )
