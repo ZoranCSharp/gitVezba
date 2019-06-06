@@ -54,4 +54,31 @@ select salesordernumber, customerId, totaldue,
 from sales.SalesOrderHeader
 
 --inline column statements
+select * from sales.SalesOrderHeader
 
+select 
+	MONTH(OrderDate) 'Month',
+	SUM(CASE YEAR(OrderDate) WHEN 2005 THEN 1 else 0 END) as 'ORDERS',
+	SUM(CASE YEAR(OrderDate) WHEN 2005 THEN TotalDue ELSE 0 END) as 'TotalValue'
+from sales.SalesOrderHeader
+group by Month(OrderDate)
+order by Month(OrderDate) asc
+
+--Simple TRY CATCH demonstration
+
+BEGIN TRY
+	select 1/0
+END TRY
+
+BEGIN CATCH
+
+SELECT
+	--NOTE
+	--In the CATCH block we can report the error
+		ERROR_NUMBER() AS ErrorNumber,
+		ERROR_SEVERITY() AS ErrorSeverity,
+		ERROR_STATE() AS ErrorState,
+		ERROR_PROCEDURE() AS ErrorProcedure,
+		ERROR_LINE() AS ErrorLine,
+		ERROR_MESSAGE() AS ErrorMessage;
+END CATCH
