@@ -82,3 +82,25 @@ SELECT
 		ERROR_LINE() AS ErrorLine,
 		ERROR_MESSAGE() AS ErrorMessage;
 END CATCH
+
+--Creating A Scalar Function
+
+select TaxAmt, Freight 
+from sales.SalesOrderHeader
+where SalesOrderID = 43660
+
+create function TandF
+(
+@tax money,
+@freight money
+)
+
+returns int
+as 
+begin 
+	return @tax + @freight
+end
+
+
+select SalesOrderID, dbo.TandF(TaxAmt, Freight) 'Tax/Freight'
+from sales.SalesOrderHeader
