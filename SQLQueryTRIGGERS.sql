@@ -57,4 +57,19 @@ where FirstName='Terri'  and LastName='Duffy'
 select * from Person.Person
 where BusinessEntityID=2
 
+--FOR XML RAW
+select top 3 FirstName, LastName from Person.Person
 
+for xml raw('Employee'), elements, root ('Employees')
+
+--FOR XML AUTO
+
+select top 3 FirstName, LastName from Person.Person
+
+FOR XML AUTO, ELEMENTS, XMLSCHEMA('TestSchema')
+
+
+--FOR XML PATH
+
+select top 3 BusinessEntityID as[@id], FirstName , LastName from Person.Person
+FOR XML PATH  ('Employee'), ROOT ('Employees')

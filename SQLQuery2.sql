@@ -133,3 +133,46 @@ as
 EXECUTE ('SELECT COUNT(*) FROM ' + @tbl)
 
 EXECUTE CountRows 'Person.Person'
+
+
+--GUID
+
+create table UsingGUIDs
+(
+ID uniqueidentifier,
+LastName varchar(40),
+FirstName varchar(40)
+)
+
+INSERT INTO UsingGUIDs
+Values
+(NewID(), 'Long', 'Mark'),(NewID(),'Jones', 'Frank')
+
+select * from UsingGUIDs
+
+create table DefaultGUIDs
+(
+ID uniqueidentifier default newid(),
+LastName varchar(40),
+FirstName varchar(40)
+)
+
+insert into DefaultGUIDs
+(LastName,FirstName)
+values
+('Smith', 'John')
+
+select * from DefaultGUIDs
+
+create table SeqGUID
+(ID uniqueidentifier default newsequentialid(),
+LastName varchar(40),
+FirstName varchar(40)
+)
+
+insert into SeqGUID
+(LastName, FirstName)
+values
+('Smith','John'),('James','Jones'),('Angelina', 'Sisolina')
+
+select * from SeqGUID
