@@ -36,3 +36,25 @@ set LastName='Longly'
 where FirstName='Mark' and LastName='Long'
 
 select * from TrigEx
+
+--Simple Transaction and Locking Example
+
+BEGIN TRANSACTION ML
+update Person.Person
+set LastName = 'Long'
+
+ROLLBACK TRANSACTION ML
+
+COMMIT TRANSACTION ML
+
+select * from Person.Person
+
+begin tran mtl
+update Person.Person
+set FirstName='Jack'
+where FirstName='Terri'  and LastName='Duffy'
+
+select * from Person.Person
+where BusinessEntityID=2
+
+
