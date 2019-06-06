@@ -104,3 +104,18 @@ end
 
 select SalesOrderID, dbo.TandF(TaxAmt, Freight) 'Tax/Freight'
 from sales.SalesOrderHeader
+
+--CREATING A TABLE VALUED FUNCTION	
+
+create function dbo.PhoneNbrs()
+returns table 
+as
+return select p.FirstName + ' ' +p.LastName 'Name',
+pp.PhoneNumber
+from Person.Person p
+join
+Person.PersonPhone pp
+on
+p.BusinessEntityID=pp.BusinessEntityID
+
+select * from PhoneNbrs()
