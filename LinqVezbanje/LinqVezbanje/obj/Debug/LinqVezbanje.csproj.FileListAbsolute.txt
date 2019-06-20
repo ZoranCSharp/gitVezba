@@ -1,0 +1,7 @@
+C:\Users\zoran.kovacevic\Desktop\LinqVezbanje\LinqVezbanje\bin\Debug\LinqVezbanje.exe.config
+C:\Users\zoran.kovacevic\Desktop\LinqVezbanje\LinqVezbanje\bin\Debug\LinqVezbanje.exe
+C:\Users\zoran.kovacevic\Desktop\LinqVezbanje\LinqVezbanje\bin\Debug\LinqVezbanje.pdb
+C:\Users\zoran.kovacevic\Desktop\LinqVezbanje\LinqVezbanje\obj\Debug\LinqVezbanje.csprojAssemblyReference.cache
+C:\Users\zoran.kovacevic\Desktop\LinqVezbanje\LinqVezbanje\obj\Debug\LinqVezbanje.csproj.CoreCompileInputs.cache
+C:\Users\zoran.kovacevic\Desktop\LinqVezbanje\LinqVezbanje\obj\Debug\LinqVezbanje.exe
+C:\Users\zoran.kovacevic\Desktop\LinqVezbanje\LinqVezbanje\obj\Debug\LinqVezbanje.pdb
