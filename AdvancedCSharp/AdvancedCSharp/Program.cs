@@ -32,6 +32,7 @@ namespace AdvancedCSharp
             }
         }
 
+        //MAIN
         static void Main(string[] args)
         {
             Transformer t = Square;
@@ -43,31 +44,45 @@ namespace AdvancedCSharp
             Util.Transform(values, Square);
             foreach (var number in values)
             {
-                Console.Write(number+" ");
+                Console.Write(number + " ");
             }
 
             ProgressReporter p = WriteProgressToConsole;
             p += WriteProgressToFile;
             Util.HardWork(p);
 
+            X x = new X();
+            ProgressReporter p1 = x.InstancePRogress;
+            p1(99);
+            Console.WriteLine(p1.Target == x);
+            Console.WriteLine(p1.Method);
 
 
             Console.ReadLine();
         }
+        //END MAIN
 
-        static int Square (int x)
+        static int Square(int x)
         {
             return x * x;
         }
 
-        static void WriteProgressToConsole(int percenteComplete)
+        static void WriteProgressToConsole(int percentComplete)
         {
-            Console.WriteLine(percenteComplete);
+            Console.WriteLine(percentComplete);
         }
 
         static void WriteProgressToFile(int percentComplete)
         {
             System.IO.File.WriteAllText("progress.txt", percentComplete.ToString());
+        }
+
+        class X
+        {
+            public void InstancePRogress(int percentComplete)
+            {
+                Console.WriteLine(percentComplete);
+            }
         }
     }
 }
