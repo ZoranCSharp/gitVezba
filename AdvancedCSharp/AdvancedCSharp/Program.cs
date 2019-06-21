@@ -12,9 +12,19 @@ namespace AdvancedCSharp
 
         public delegate void ProgressReporter(int percentComplete);
 
+        public delegate T Transformer1<T>(T arg);
+
         class Util
         {
             public static void Transform(int[] values, Transformer t)
+            {
+                for (int i = 0; i < values.Length; i++)
+                {
+                    values[i] = t(values[i]);
+                }
+            }
+
+            public static void Transform1<T>(T[] values, Transformer1<T> t)
             {
                 for (int i = 0; i < values.Length; i++)
                 {
@@ -47,6 +57,15 @@ namespace AdvancedCSharp
                 Console.Write(number + " ");
             }
 
+            Console.WriteLine("\n");
+            int[] values2 = { 3, 4, 5 };
+            Util.Transform1(values2, Square);
+            foreach (var number in values2)
+            {
+                Console.Write(number + " ");
+            }
+
+            Console.WriteLine("\n");
             ProgressReporter p = WriteProgressToConsole;
             p += WriteProgressToFile;
             Util.HardWork(p);
