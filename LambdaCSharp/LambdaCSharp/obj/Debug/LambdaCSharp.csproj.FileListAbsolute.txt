@@ -1,0 +1,7 @@
+C:\Users\zoran.kovacevic\Desktop\LambdaCSharp\LambdaCSharp\bin\Debug\LambdaCSharp.exe.config
+C:\Users\zoran.kovacevic\Desktop\LambdaCSharp\LambdaCSharp\bin\Debug\LambdaCSharp.exe
+C:\Users\zoran.kovacevic\Desktop\LambdaCSharp\LambdaCSharp\bin\Debug\LambdaCSharp.pdb
+C:\Users\zoran.kovacevic\Desktop\LambdaCSharp\LambdaCSharp\obj\Debug\LambdaCSharp.csprojAssemblyReference.cache
+C:\Users\zoran.kovacevic\Desktop\LambdaCSharp\LambdaCSharp\obj\Debug\LambdaCSharp.csproj.CoreCompileInputs.cache
+C:\Users\zoran.kovacevic\Desktop\LambdaCSharp\LambdaCSharp\obj\Debug\LambdaCSharp.exe
+C:\Users\zoran.kovacevic\Desktop\LambdaCSharp\LambdaCSharp\obj\Debug\LambdaCSharp.pdb
