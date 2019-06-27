@@ -124,12 +124,11 @@ namespace LambdaCSharp
    
     class Program
     {
+        static (string name, int age) GetPerson() => ("Bob", 25);
 
-        
         static void Main(string[] args)
         {
-            int? a = null;
-            Console.WriteLine(a == null);
+            
 
             Stock stock = new Stock("THPW");
             stock.Price = 27.10M;
@@ -157,7 +156,32 @@ namespace LambdaCSharp
             Console.ForegroundColor = ConsoleColor.Blue;
             Iteratori iter = new Iteratori();
             iter.Iterat();
-            
+
+            int? a = null;
+            int? b = 5;
+            Console.WriteLine(a == null);
+            Console.WriteLine(a == b);
+            Console.WriteLine(a != 5);
+            Console.WriteLine(b == null);
+            Console.WriteLine(b > 10);
+            Console.ForegroundColor = ConsoleColor.Red;
+            bool x = (b.HasValue && a.HasValue) ? (a.Value > b.Value) : false;
+            Console.WriteLine(x);
+
+            bool? aa = null;
+            bool? bb = false;
+            Console.WriteLine(aa | bb);
+            Console.WriteLine(aa & bb);
+
+            var tuple = (Name: "Bob", Age: 25);
+            Console.WriteLine(tuple.Age);
+            Console.WriteLine(tuple.Name);
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            var person = GetPerson();
+            Console.WriteLine(person.name);
+            Console.WriteLine(person.age);
+
 
             Console.ReadKey();
 
