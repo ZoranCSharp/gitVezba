@@ -78,8 +78,48 @@ namespace LambdaCSharp
                 }
 
 
+
         }
     }
+
+    class Iteratori
+    {
+        public void Iterat()
+        {
+            //foreach (int fib in Fibs(10))
+            //{
+                // Console.WriteLine(fib + " ");
+                foreach (int fib in EvenNumbers(Fibs(10)))
+                {
+                Console.WriteLine(fib);
+                }
+            //}
+        }
+
+        static IEnumerable<int> Fibs(int fibCount)
+        {
+            for(int i = 0, prevFib = 1, curFib = 1; i < fibCount; i++)
+            {
+                yield return prevFib;
+                int newFib = prevFib + curFib;
+                prevFib = curFib;
+                curFib = newFib;
+            }
+        }
+
+         static IEnumerable<int> EvenNumbers (IEnumerable<int> sequence)
+        {
+            foreach (int num in sequence)
+            {
+                if((num % 2) == 0)
+                {
+                    yield return num;
+                }
+            }
+        }
+    }
+
+   
 
    
     class Program
@@ -88,11 +128,14 @@ namespace LambdaCSharp
         
         static void Main(string[] args)
         {
+            int? a = null;
+            Console.WriteLine(a == null);
+
             Stock stock = new Stock("THPW");
             stock.Price = 27.10M;
 
             stock.PriceChanged += stock_PriceChanged;
-            stock.Price = 31.59M;
+            stock.Price = 31.59M; 
 
             int factor = 2;
             Func<int, int> multiplier = n => n * factor;
@@ -111,7 +154,10 @@ namespace LambdaCSharp
             Exep ex = new Exep();
             ex.Blah();
 
-
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Iteratori iter = new Iteratori();
+            iter.Iterat();
+            
 
             Console.ReadKey();
 
