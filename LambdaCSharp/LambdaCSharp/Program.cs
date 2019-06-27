@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -119,6 +120,19 @@ namespace LambdaCSharp
         }
     }
 
+
+    class Atributi
+    {
+        public void Foo([CallerMemberName] string memberName = null,
+                        [CallerFilePath] string filePath = null,
+                        [CallerLineNumber] int lineNumber = 0)
+        {
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            Console.WriteLine(memberName);
+            Console.WriteLine(filePath);
+            Console.WriteLine(lineNumber);
+        }
+    }
    
 
    
@@ -182,6 +196,8 @@ namespace LambdaCSharp
             Console.WriteLine(person.name);
             Console.WriteLine(person.age);
 
+            Atributi atri = new Atributi();
+            atri.Foo();
 
             Console.ReadKey();
 
