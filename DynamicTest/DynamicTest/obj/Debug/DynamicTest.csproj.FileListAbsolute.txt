@@ -1,0 +1,7 @@
+C:\Users\zoran.kovacevic\Desktop\DynamicTest\DynamicTest\bin\Debug\DynamicTest.exe.config
+C:\Users\zoran.kovacevic\Desktop\DynamicTest\DynamicTest\bin\Debug\DynamicTest.exe
+C:\Users\zoran.kovacevic\Desktop\DynamicTest\DynamicTest\bin\Debug\DynamicTest.pdb
+C:\Users\zoran.kovacevic\Desktop\DynamicTest\DynamicTest\obj\Debug\DynamicTest.csprojAssemblyReference.cache
+C:\Users\zoran.kovacevic\Desktop\DynamicTest\DynamicTest\obj\Debug\DynamicTest.csproj.CoreCompileInputs.cache
+C:\Users\zoran.kovacevic\Desktop\DynamicTest\DynamicTest\obj\Debug\DynamicTest.exe
+C:\Users\zoran.kovacevic\Desktop\DynamicTest\DynamicTest\obj\Debug\DynamicTest.pdb
